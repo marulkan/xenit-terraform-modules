@@ -422,3 +422,17 @@ variable "kube_state_metrics_namepsaces_extras" {
   type        = list(string)
   default     = []
 }
+
+variable "az_metrics_enabled" {
+  description = "Should AZ Metrics be enabled"
+  type        = bool
+  default     = true
+}
+
+variable "az_metrics_config" {
+  description = "AZ Metrics configuration"
+  type = object({
+    client_id   = string
+    resource_id = string
+  })
+}
